@@ -25,6 +25,6 @@ This data analysis project is devided into 6 phases:
 All the prepared deliverables are inside this repository. 
 The deliverables are: 
 * Scope of Work document.
-* Data Description Report.(Google Data Analytics Study Case/Data Description Report.Rmd)
+* [Data Description Report].(/Google Data Analytics Study Case/Data Description Report.Rmd)
 * 
 
