@@ -1,0 +1,550 @@
+---
+title: 'Bellabeat Case Study : Data Transformation Report'
+author: "M.S.KADRI"
+date: '2022-07-03'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+## Report summary: 
+1. Bellabeat Case Study
+2. Data Processing Tools
+3. Data Examination & Diagnosis
+4. Data Transformation
+
+### 1. Bellabeat Case Study
+
+The [Bellabeat](https://bellabeat.com) case study is a data analysis project for a a high-tech manufacturer of health-focused products for women. The main objective of this data analysis project is to conduct a full and thorough analysis of smart device data to gain insight into how consumers are using their smart devices.
+The conducted analysis aims for extracting insights from the provided data to guide future marketing strategy for the Bellabeat marketing analytics team.
+
+### 3. Data Processing Tools
+
+For the data processing and analysis phases of this project a selection of data manipulation tools where used to examine the data, verify its integrity, and conduct data transformation operations to prepare it for the analysis phase.
+
+The tools are: 
+* **RStudio**: an IDE for R, a programming language for statistical computing and graphics.
+* **BigQuery**: a fully-managed, serverless data warehouse that enables scalable analysis over petabytes of data.
+* **Google Sheets**: a spreadsheet program included as part of the free, web-based Google Docs Editors suite offered by Google.
+
+### 4. Data Examination & Diagnosis: 
+
+All of the 18 CSV files where examined and processed using RStudio, BigQuery, and Google Sheets. A summary of the diagnosis process is detailed in the table below. 
+
+```{r echo=FALSE}
+
+col1 <- c(
+ "dailyActivity_merged.csv",
+ "dailyCalories_merged.csv",
+ "dailyIntensities_merged.csv",
+ "dailySteps_merged.csv",
+ "heartrate_seconds_merged.csv",
+ "hourlyCalories_merged.csv",
+ "hourlyIntensities_merged.csv",
+ "hourlySteps_merged.csv",
+ "minuteCaloriesNarrow_merged.csv",
+ "minuteCaloriesWide_merged.csv",
+ "minuteIntensitiesNarrow_merged.csv",
+ "minuteIntensitiesWide_merged.csv",
+ "minuteMETsNarrow_merged.csv",
+ "minuteSleep_merged.csv",
+ "minuteStepsNarrow_merged.csv",
+ "minuteStepsWide_merged.csv",
+ "sleepDay_merged.csv",
+ "weightLogInfo_merged.csv")
+
+col2 <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65)
+col3 <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+col4 <- c(940, 940, 940, 940, 2483658, 22099, 22099, 22099, 1325580, 21645, 1325580, 21645, 1325580, 188521, 1325580, 21645, 413, 67)
+
+Table1 <- data.frame(col1, col2, col3, col4)
+colnames(Table1) <- c("Dataset file", "missing values", "duplicate values", "inconsistent data type")
+
+knitr::kable(Table1, "pipe", align = "lccrr", caption = "Table 1: Diagnosis Summary")
+
+```
+
+---
+
+**Dataset file**: dailyActivity_merged.csv  
+**format**: CSV file  
+**Number of observations**: 940  
+**Number of variables**: 15  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityDate" column observations are "char" type instead of "date" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: dailyCalories_merged.csv  
+**format**: CSV file  
+**Number of observations**: 940  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityDay" column observations are "char" type instead of "date" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: dailyIntensities_merged.csv  
+**format**: CSV file  
+**Number of observations**: 940  
+**Number of variables**: 10  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityDay" column observations are "char" type instead of "date" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: dailySteps_merged.csv  
+**format**: CSV file  
+**Number of observations**: 940  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityDay" column observations are "char" type instead of "date" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: heartrate_seconds_merged.csv  
+**format**: CSV file  
+**Number of observations**: 2483658  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"Time" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: hourlyCalories_merged.csv  
+**format**: CSV file  
+**Number of observations**: 22099  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: hourlyIntensities_merged.csv  
+**format**: CSV file  
+**Number of observations**: 22099  
+**Number of variables**: 4  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: hourlySteps_merged.csv  
+**format**: CSV file  
+**Number of observations**: 22099  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteCaloriesNarrow_merged.csv  
+**format**: CSV file  
+**Number of observations**: 1325580  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityMinute" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteCaloriesWide_merged.csv  
+**format**: CSV file  
+**Number of observations**: 21645  
+**Number of variables**: 62  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteIntensitiesNarrow_merged.csv  
+**format**: CSV file  
+**Number of observations**: 1325580  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityMinute" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteIntensitiesWide_merged.csv  
+**format**: CSV file  
+**Number of observations**: 21645  
+**Number of variables**: 62  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityMinute" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteMETsNarrow_merged.csv  
+**format**: CSV file  
+**Number of observations**: 1325580  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityMinute" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteSleep_merged.csv  
+**format**: CSV file  
+**Number of observations**: 188521  
+**Number of variables**: 4  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"date" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteStepsNarrow_merged.csv  
+**format**: CSV file  
+**Number of observations**: 1325580  
+**Number of variables**: 3  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityMinute" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: minuteStepsWide_merged.csv  
+**format**: CSV file  
+**Number of observations**: 21645  
+**Number of variables**: 62  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations are "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+No issues.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: sleepDay_merged.csv  
+**format**: CSV file  
+**Number of observations**: 413  
+**Number of variables**: 5  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"ActivityHour" column observations ar "char" type instead of "datetime" type.
+
+**Data Range Validation**  
+1 issue: 
+- All Id observations has incomplete data range for the sleepday variable column.
+- The Id number 6962181067 has only one observation missing for the sleepday variable column.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+**Dataset file**: weightLogInfo_merged.csv  
+**format**: CSV file  
+**Number of observations**: 67  
+**Number of variables**: 8  
+**Metadata availability**: No  
+
+**Data Structure Validation**  
+No issues.
+
+**Data Type Validation**  
+1 issue: 
+"Date" column observations ar "char" type instead of "date" type.
+
+**Data Range Validation**  
+1 issue: 
+- All Id observations has incomplete data range for the sleepday variable column.
+
+**Data constraints Validation**  
+No issues.
+
+**Data Consistency Validation**  
+No issues.
+
+---
+
+### 4. Data Transformation
+
+To fix the redundant issue of the invalid data type for the date/time columns in all the datasets, the dataset files were loaded to RStudio to change the datatype manually.
+Another major reason for using RStudio is the fact that BigQuery won't accept schemas with wrong data types format. And since BigQuery will be used for further data aggregation and extraction, the process is fixing the data type issue with R was the most practical approach. 
+
+Additionally, RStudio was used to verify the integrity of data and to check it for duplicates and missing values. The code snippet below was used to detect the presence of duplicates and missing values in the DailyActivity dataset and to get a quick examination of the data and its structure and  a summary statistic.
+
+```{r DailyActivity Data Examination}
+DailyActivity_merged <- read.csv('.\BellabeatStudyCase\StudyCaseData\dailyActivity_merged.csv')
+
+DailyActivity_fixed <- DailyActivity_merged
+DailyActivity_fixed$ActivityDate <- as.Date(DailyActivity_fixed$ActivityDate, format='%m/%d/%Y')
+
+str(DailyActivity_fixed)
+summary(DailyActivity_fixed)
+
+cat("Number of NA values: ", sum(is.na(DailyActivity_fixed)), "\n")
+cat("Number of distinct IDs: ", n_distinct(DailyActivity_fixed$Id), "\n")
+v1 <- duplicated(DailyActivity_fixed)
+cat("Number of duplicate: ", length(v1[v1==TRUE]), "\n")
+
+plot1 <- ggplot(data=DailyActivity_fixed, aes(x=TotalSteps, y=SedentaryActiveDistance)) + geom_point()
+plot2 <- ggplot(data=DailyActivity_fixed, aes(x=TotalSteps, y=VeryActiveDistance)) + geom_point()
+plot3 <- ggplot(data=DailyActivity_fixed, aes(x=TotalSteps, y=Calories)) + geom_point()
+```
+
+After fixing the dataset files and saving the fixed versions in a different folder, the fixed datasets were loaded to bigQuery and Google Spreadsheets for further analysis. Below an example of a simple SQL used to calculate the average number of recorded steps for the 30 user.
+
+```{sql connection=DailySteps}
+SELECT
+  DISTINCT ID, SUM(StepTotal) AS TotalSteps, ROUND(AVG(StepTotal)) AS AVGSteps 
+FROM `thematic-answer-351222.Bellabeat_Data.DailySteps` 
+GROUP BY
+ID
+ORDER BY
+TotalSteps DESC;
+```
+
+Consequently, and after the data extraction process, Google Spreadsheet was used to generate pivot tables and charts for data visualization.
+
+![Caption for the picture.](R\BellabeatStudyCase\RMD files\images\chart1.png)
