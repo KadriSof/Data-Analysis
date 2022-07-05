@@ -24,10 +24,10 @@ This data analysis project is devided into 6 phases:
 
 All the prepared deliverables are inside this repository (PDF and RMD files). 
 The deliverables are: 
-* [Scope of Work document](Google Data Analytics Study Case/Bellabeat Data Analysis Case Study - Scope of Work.pdf)
-* [Data Description Report](Google Data Analytics Study Case/Data Description Report.pdf)
-* [Data Transformation Report](Google Data Analytics Study Case/Data Transformation Report.pdf)
-* [Data Analysis Report]
-* [Data Analysis Summary Presentation](Google Data Analytics Study Case/Bellabeat Case Study_ How Can a Wellness Technology Company Play It Smart_.pdf)
+* [Scope of Work document](https://github.com/KadriSof/Data-Analysis/blob/main/Google%20Data%20Analytics%20Study%20Case/Bellabeat%20Data%20Analysis%20Case%20Study%20-%20Scope%20of%20Work.pdf).
+* [Data Description Report](https://github.com/KadriSof/Data-Analysis/blob/main/Google%20Data%20Analytics%20Study%20Case/Data%20Description%20Report.pdf).
+* [Data Transformation Report](https://github.com/KadriSof/Data-Analysis/blob/main/Google%20Data%20Analytics%20Study%20Case/Data%20Transformation%20Report.pdf).
+* Data Analysis Report
+* [Data Analysis Summary Presentation](https://github.com/KadriSof/Data-Analysis/blob/main/Google%20Data%20Analytics%20Study%20Case/Bellabeat%20Case%20Study_%20How%20Can%20a%20Wellness%20Technology%20Company%20Play%20It%20Smart_.pdf)
 
 For more detailed information about this study case feel free to contact me via my [email address](mailto:mohamed.sofiene.kadri@gmail.com).
