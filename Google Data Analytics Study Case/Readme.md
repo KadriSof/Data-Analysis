@@ -20,11 +20,14 @@ This data analysis project is devided into 6 phases:
 5. **Share**: Create data visualization to communicate the high-level insights and recommendations using a visualization support that contains the key findings.
 6. **Act**: Prepare the deliverables and present the case study.
 
-## Deliverables
+## Contents
 
-All the prepared deliverables are inside this repository. 
+All the prepared deliverables are inside this repository (PDF and RMD files). 
 The deliverables are: 
-* Scope of Work document.
-* [Data Description Report].(/Google Data Analytics Study Case/Data Description Report.Rmd)
-* 
+* [Scope of Work document](Google Data Analytics Study Case/Bellabeat Data Analysis Case Study - Scope of Work.pdf)
+* [Data Description Report](Google Data Analytics Study Case/Data Description Report.pdf)
+* [Data Transformation Report](Google Data Analytics Study Case/Data Transformation Report.pdf)
+* [Data Analysis Report]
+* [Data Analysis Summary Presentation](Google Data Analytics Study Case/Bellabeat Case Study_ How Can a Wellness Technology Company Play It Smart_.pdf)
 
+For more detailed information about this study case feel free to contact me via my [email address](mailto:mohamed.sofiene.kadri@gmail.com).
